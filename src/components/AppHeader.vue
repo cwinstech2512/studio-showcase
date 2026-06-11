@@ -6,6 +6,7 @@ import { navLinks } from '../data/content'
 
 const { y } = useWindowScroll()
 const isScrolled = computed(() => y.value > 40)
+const basePath = import.meta.env.BASE_URL
 </script>
 
 <template>
@@ -17,7 +18,7 @@ const isScrolled = computed(() => y.value > 40)
     :transition="{ duration: 0.8, ease: [0, 0.5, 0.22, 1] }"
   >
     <a href="#top" class="header__logo">
-      <img src="/assets/logo.svg" alt="Studio" width="150" height="20" />
+      <img :src="`${basePath}assets/logo.svg`" alt="Studio" width="150" height="20" />
     </a>
 
     <nav class="header__nav">

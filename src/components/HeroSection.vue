@@ -12,6 +12,8 @@ const rightCols = [
   { images: heroColumnImages.right, direction: 'down' as const, duration: 30, width: 200 },
   { images: heroColumnImages.left, direction: 'up' as const, duration: 34, width: 400 },
 ]
+
+const basePath = import.meta.env.BASE_URL
 </script>
 
 <template>
@@ -38,7 +40,7 @@ const rightCols = [
       :transition="{ duration: 2.4, ease: [0, 0.4, 0.22, 1], delay: 0.2 }"
     >
       <motion.img
-        src="/assets/showcase-icon.svg"
+        :src="`${basePath}assets/showcase-icon.svg`"
         alt=""
         class="hero__icon"
         :while-hover="{ scale: 1.05 }"

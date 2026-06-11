@@ -13,6 +13,7 @@ const filtered = computed(() =>
     ? websites
     : websites.filter((site) => site.category === props.category),
 )
+const basePath = import.meta.env.BASE_URL
 </script>
 
 <template>
@@ -27,7 +28,7 @@ const filtered = computed(() =>
         :transition="{ duration: 0.8, delay: 0.05 }"
       >
         <div class="grid-section__brand">
-          <img src="/assets/logo.svg" alt="Studio" class="grid-section__logo" />
+          <img :src="`${basePath}assets/logo.svg`" alt="Studio" class="grid-section__logo" />
           <div class="grid-section__titles">
             <motion.span
               :initial="{ opacity: 0, y: 8 }"
